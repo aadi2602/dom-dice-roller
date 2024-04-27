@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice-Roller</title>
+    <style>
+        body {
+            background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+        }
+
+        .container{
+            display: block;
+            margin: 10px auto;
+            padding: 10px;
+            width: 300px;
+            height: auto;
+            border: #b12a5b;
+            border-radius: 15px;
+            box-shadow: 0 0 10px #b12a5b;
+            background-image: linear-gradient(120deg, #a6c0fe 0%, #f68084 100%);
+        }
+
+        .heading {
+            text-align: center;
+            display: block;
+            margin: 10px auto;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .dice-img {
+            height: 200px;
+            display: block;
+            margin: 20px auto;
+        }
+
+
+        .btn {
+            font-family: 'Courier New', Courier, monospace;
+            width: 250px;
+            display: block;
+            margin: 10px auto;
+            font-size: 30px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185 52%, #cf556c 78%, #b12a5b 100%);
+
+        }
+
+        .btn:hover {
+            background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading"><u>Dice Roller</u></h1>
+
+        <img src="dice1.png" alt="dice" class="dice-img" id="dice-img" />
+
+        <button class="btn" onclick="roll()">Roll Dice</button>
+    </div>
+
+    <script>
+
+        function roll() {
+            const min = 1;
+            const max = 6;
+
+            const randomNumber = Math.round(Math.random() * (max - min)) + min;
+
+            const imgElement = document.getElementById('dice-img');
+
+            switch (randomNumber) {
+                case 1:
+                    imgElement.src = 'dice1.png';
+                    break;
+                case 2:
+                    imgElement.src = 'dice2.png';
+                    break;
+                case 3:
+                    imgElement.src = 'dice3.png';
+                    break;
+                case 4:
+                    imgElement.src = 'dice4.png';
+                    break;
+                case 5:
+                    imgElement.src = 'dice5.png';
+                    break;
+                case 6:
+                    imgElement.src = 'dice6.png';
+                    break;
+                default:
+                    imgElement.src = 'default.png'
+            }
+        }
+
+    </script>
+</body>
+
+</html>
